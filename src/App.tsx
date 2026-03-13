@@ -499,7 +499,7 @@ const res = await fetch('https://juridiskie-atzinumi-api.onrender.com/api/users'
   const fetchOpinions = async () => {
     if (!user) return;
     try {
-      const res = await fetch('/api/opinions', {
+      const res = await fetch('https://juridiskie-atzinumi-api.onrender.com/api/opinions', {
         headers: { 'Authorization': `Bearer ${user.token}` }
       });
       if (res.ok) {
