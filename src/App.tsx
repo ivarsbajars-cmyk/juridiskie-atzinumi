@@ -484,7 +484,7 @@ Atgriez līdz 5 variantiem. Ja neatrodi nevienu, atgriez tukšu masīvu.`,
   const fetchUsers = async () => {
     if (!user || !isAdmin) return;
     try {
-      const res = await fetch('https://juridiskie-atzinumi-api.onrender.com/api/users', {
+const res = await fetch('https://juridiskie-atzinumi-api.onrender.com/api/users', {
         headers: { 'Authorization': `Bearer ${user.token}` }
       });
       if (res.ok) {
