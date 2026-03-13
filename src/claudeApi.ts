@@ -38,7 +38,7 @@ export async function claudeGenerate(
     body.tools = [{ type: 'web_search_20250305', name: 'web_search' }];
   }
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
+  const response = await fetch("/api/claude", {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
