@@ -500,8 +500,12 @@ const res = await fetch('https://juridiskie-atzinumi-api.onrender.com/api/users'
     if (!user) return;
     try {
       const res = await fetch('https://juridiskie-atzinumi-api.onrender.com/api/opinions', {
-        headers: { 'Authorization': `Bearer ${user.token}` }
-      });
+  method: 'GET',
+  headers: {
+    'Authorization': `Bearer ${user.token}`,
+    'Content-Type': 'application/json'
+  }
+});
       if (res.ok) {
         const data = await res.json();
         setOpinionsList(data);
