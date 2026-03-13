@@ -51,10 +51,10 @@ export async function claudeGenerate(
 
   const data = await response.json();
   // Savāc visus teksta blokus (web_search var ievietot starprezultātus)
-  return data.content
-    .filter((b: any) => b.type === 'text')
-    .map((b: any) => b.text)
-    .join('');
+  return (data.content || [])
+  .filter((b: any) => b.type === 'text')
+  .map((b: any) => b.text)
+  .join('');
 }
 
 /**
