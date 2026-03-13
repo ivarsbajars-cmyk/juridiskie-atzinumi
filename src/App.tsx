@@ -484,7 +484,7 @@ Atgriez līdz 5 variantiem. Ja neatrodi nevienu, atgriez tukšu masīvu.`,
   const fetchUsers = async () => {
     if (!user || !isAdmin) return;
     try {
-      const res = await fetch('/api/users', {
+      const res = await fetch('https://juridiskie-atzinumi-api.onrender.com/api/users', {
         headers: { 'Authorization': `Bearer ${user.token}` }
       });
       if (res.ok) {
@@ -555,7 +555,7 @@ Atgriez līdz 5 variantiem. Ja neatrodi nevienu, atgriez tukšu masīvu.`,
   const saveOpinion = async (serviceType: string, questionText: string, answer: string) => {
     if (!user) return;
     try {
-      await fetch('/api/opinions', {
+      fetch('https://juridiskie-atzinumi-api.onrender.com/api/opinions'
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
