@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import { createServer as createViteServer } from "vite";
 import Database from "better-sqlite3";
 import bcrypt from "bcryptjs";
@@ -56,7 +57,8 @@ async function startServer() {
   const app = express();
 const PORT = process.env.PORT || 3000;
 
-  app.use(express.json());
+app.use(cors());  
+app.use(express.json());
 
   // API Routes
   app.post("/api/auth/register", async (req, res) => {
