@@ -559,7 +559,7 @@ const res = await fetch('https://juridiskie-atzinumi-api.onrender.com/api/users'
   const saveOpinion = async (serviceType: string, questionText: string, answer: string) => {
     if (!user) return;
     try {
-      fetch('https://juridiskie-atzinumi-api.onrender.com/api/opinions'
+      fetch('https://juridiskie-atzinumi-api.onrender.com/api/opinions', {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
