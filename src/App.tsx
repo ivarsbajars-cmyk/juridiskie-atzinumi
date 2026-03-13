@@ -503,7 +503,7 @@ const res = await fetch('https://juridiskie-atzinumi-api.onrender.com/api/users'
   method: 'GET',
   headers: {
     'Authorization': `Bearer ${user.token}`,
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
   }
 });
       if (res.ok) {
