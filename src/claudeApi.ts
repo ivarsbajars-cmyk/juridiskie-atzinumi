@@ -39,10 +39,11 @@ export async function claudeGenerate(
   }
 
 
-   const response = await fetch("https://juridiskie-atzinumi-api.onrender.com/api/claude", {
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
+   onst response = await fetch("https://juridiskie-atzinumi-api.onrender.com/api/claude", {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(body),
+});
 
   if (!response.ok) {
     const err = await response.text();
