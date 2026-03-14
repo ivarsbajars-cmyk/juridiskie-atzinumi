@@ -75,11 +75,11 @@ export async function claudeChat(
 
   if (system) body.system = system;
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
+  const response = await fetch('https://juridiskie-atzinumi-api.onrender.com/api/claude', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ prompt: messages[messages.length - 1]?.content || '' }),
+});
 
   if (!response.ok) {
     const err = await response.text();
