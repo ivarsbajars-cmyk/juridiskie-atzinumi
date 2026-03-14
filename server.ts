@@ -116,7 +116,7 @@ app.use(express.json());
 
   app.post("/api/claude", async (req, res) => {
   try {
-    const { prompt } = req.body;
+    const prompt = req.body?.prompt || req.body?.messages?.[0]?.content || '';
 
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
