@@ -38,7 +38,7 @@ export async function claudeGenerate(
     body.tools = [{ type: 'web_search_20250305', name: 'web_search' }];
   }
 
-  const response = await fetch("/api/claude", {
+
    const response = await fetch("https://juridiskie-atzinumi-api.onrender.com/api/claude", {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
