@@ -440,7 +440,7 @@ Atgriez līdz 5 variantiem. Ja neatrodi nevienu, atgriez tukšu masīvu.`,
     e.preventDefault();
     setLoginError('');
     try {
-      const endpoint = isRegistering ? '/api/auth/register' : '/api/auth/login';
+      const endpoint = isRegistering ? 'https://juridiskie-atzinumi-api.onrender.com/api/auth/register' : 'https://juridiskie-atzinumi-api.onrender.com/api/auth/login';
       const body = isRegistering 
         ? { email: loginEmail, password: loginPassword, firstName: registerFirstName, lastName: registerLastName }
         : { email: loginEmail, password: loginPassword };
