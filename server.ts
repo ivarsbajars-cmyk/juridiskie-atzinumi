@@ -126,7 +126,7 @@ app.use(express.json());
         "anthropic-version": "2023-06-01"
       },
       body: JSON.stringify({
-        model: "claude-3-5-sonnet-20241022",
+       model: "claude-opus-4-6",
         max_tokens: 2000,
         messages: [
           { role: "user", content: prompt }
@@ -137,7 +137,7 @@ app.use(express.json());
     const data = await response.json();
 
     res.json({
-      answer: data?.content?.[0]?.text || "Nav atbildes"
+      answer: data?.content?.[0]?.text || JSON.stringify(data) || "Nav atbildes"
     });
 
   } catch (err) {
